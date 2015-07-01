@@ -29,6 +29,16 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+server.on('listening',function(){
+  console.log('ok, server is running');
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+
+});
+
+
 /**
  * Normalize a port into a number, string, or false.
  */
